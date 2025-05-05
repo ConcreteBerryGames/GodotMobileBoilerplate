@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlyqio38o6mpw"]
+[gd_scene load_steps=3 format=3 uid="uid://dlyqio38o6mpw"]
 
 [ext_resource type="Script" uid="uid://p6wndf4rf0o1" path="res://scenes/level_ui.gd" id="1_exbfu"]
+[ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="2_qvfhj"]
 
 [node name="LevelUI" type="Control"]
 layout_mode = 3
@@ -41,6 +42,13 @@ to go to next level"
 horizontal_alignment = 1
 
 [node name="LeavingLevelConfimation" type="ConfirmationDialog" parent="CanvasLayer"]
+title = ""
+size = Vector2i(686, 184)
+unresizable = true
+borderless = true
+theme = ExtResource("2_qvfhj")
+ok_button_text = "Yes"
+dialog_text = "Are you sure You want to exit this level?"
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LeavingLevelConfimation" to="." method="_on_leaving_level_confimation_confirmed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqkvcpjiwp2bi"]
+[gd_scene load_steps=4 format=3 uid="uid://cqkvcpjiwp2bi"]
 
 [ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://i3gjvseefs5r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="3_bqqt6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -62,8 +63,24 @@ theme_override_font_sizes/font_size = 28
 text = "Exit"
 
 [node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(465, 232)
+unresizable = true
+borderless = true
+theme = ExtResource("3_bqqt6")
+ok_button_text = "Yes"
+dialog_text = "Are you sure you want to 
+reset all your progress?"
 
 [node name="ExitConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = ""
+position = Vector2i(0, 56)
+size = Vector2i(480, 184)
+unresizable = true
+borderless = true
+content_scale_aspect = 1
+theme = ExtResource("3_bqqt6")
+ok_button_text = "Yes"
+dialog_text = "Do you want to exit game?"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
