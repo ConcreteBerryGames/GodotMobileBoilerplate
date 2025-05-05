@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwpkx70jc7hkb"]
 
-[ext_resource type="Texture2D" uid="uid://df8cep6alyss3" path="res://graphics/bg.png" id="1_pbc48"]
+[ext_resource type="Texture2D" uid="uid://df8cep6alyss3" path="res://resources/graphics/bg.png" id="1_pbc48"]
 [ext_resource type="PackedScene" uid="uid://dlyqio38o6mpw" path="res://scenes/level_ui.tscn" id="2_eqxsl"]
 [ext_resource type="PackedScene" uid="uid://rn46p230ifda" path="res://scenes/complete_level.tscn" id="3_b4j7a"]
 

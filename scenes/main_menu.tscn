@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqkvcpjiwp2bi"]
+[gd_scene load_steps=3 format=3 uid="uid://cqkvcpjiwp2bi"]
 
+[ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://i3gjvseefs5r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 
 [node name="Control" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ekxnf")
 script = ExtResource("1_l6cm7")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -30,7 +32,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -39,22 +41,22 @@ theme_override_font_sizes/font_size = 32
 text = "MY MOBILE GAME"
 horizontal_alignment = 1
 
-[node name="Play" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Play"
 
-[node name="Reset" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+[node name="Reset" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Reset"
 
-[node name="Visit" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+[node name="Visit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Visist page"
 
-[node name="Exit" type="MenuButton" parent="CenterContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Exit"
