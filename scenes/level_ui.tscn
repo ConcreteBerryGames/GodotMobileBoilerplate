@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlyqio38o6mpw"]
+
+[ext_resource type="Script" uid="uid://p6wndf4rf0o1" path="res://scenes/level_ui.gd" id="1_exbfu"]
+
+[node name="LevelUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exbfu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -145.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "←"
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 148.0
+offset_top = 34.0
+offset_right = 578.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 50
+text = "Click Godot icon 
+to go to next level"
+horizontal_alignment = 1
+
+[node name="LeavingLevelConfimation" type="ConfirmationDialog" parent="CanvasLayer"]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="confirmed" from="CanvasLayer/LeavingLevelConfimation" to="." method="_on_leaving_level_confimation_confirmed"]
