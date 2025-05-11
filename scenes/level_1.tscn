@@ -19,4 +19,13 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="CompleteLevel" parent="." instance=ExtResource("2_bswci")]
-position = Vector2(328, 301)
+position = Vector2(330, 500)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 282.0
+offset_top = 586.0
+offset_right = 389.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 32
+text = "Level 1
+"

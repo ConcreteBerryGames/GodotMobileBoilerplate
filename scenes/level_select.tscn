@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1xwajhkput3i"]
+[gd_scene load_steps=4 format=3 uid="uid://c1xwajhkput3i"]
 
 [ext_resource type="Script" uid="uid://cxbrafke62sp0" path="res://scenes/level_select.gd" id="1_3shnc"]
+[ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="1_p0wlc"]
+[ext_resource type="Theme" uid="uid://c6sfhmsmqm222" path="res://resources/themes/BackButton.tres" id="3_2epne"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_p0wlc")
 script = ExtResource("1_3shnc")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -29,25 +32,29 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LevelsGrid" type="GridContainer" parent="CenterContainer"]
+layout_direction = 2
 layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
 columns = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -203.0
+offset_bottom = 69.0
 grow_horizontal = 0
-grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
 
 [node name="Back" type="Button" parent="MarginContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "←"
+theme = ExtResource("3_2epne")
+text = "← go back"
 icon_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/Back" to="." method="_on_back_pressed"]
