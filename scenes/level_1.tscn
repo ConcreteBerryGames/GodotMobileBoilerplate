@@ -12,11 +12,6 @@ scale = Vector2(25.9677, 44.5333)
 texture = ExtResource("1_rus8k")
 
 [node name="LevelUI" parent="." instance=ExtResource("1_014kd")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-grow_horizontal = 0
-grow_vertical = 0
 
 [node name="CompleteLevel" parent="." instance=ExtResource("2_bswci")]
 position = Vector2(330, 500)
