@@ -63,20 +63,24 @@ theme_override_font_sizes/font_size = 28
 text = "Exit"
 
 [node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
 size = Vector2i(465, 232)
 unresizable = true
 borderless = true
+transparent = true
 theme = ExtResource("3_bqqt6")
 ok_button_text = "Yes"
 dialog_text = "Are you sure you want to 
 reset all your progress?"
 
 [node name="ExitConfirmationDialog" type="ConfirmationDialog" parent="."]
+transparent_bg = true
 title = ""
 position = Vector2i(0, 56)
 size = Vector2i(480, 184)
 unresizable = true
 borderless = true
+transparent = true
 content_scale_aspect = 1
 theme = ExtResource("3_bqqt6")
 ok_button_text = "Yes"

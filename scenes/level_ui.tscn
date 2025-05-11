@@ -49,10 +49,12 @@ to go to next level"
 horizontal_alignment = 1
 
 [node name="LeavingLevelConfimation" type="ConfirmationDialog" parent="CanvasLayer"]
+transparent_bg = true
 title = ""
 size = Vector2i(686, 184)
 unresizable = true
 borderless = true
+transparent = true
 theme = ExtResource("2_qvfhj")
 ok_button_text = "Yes"
 dialog_text = "Are you sure You want to exit this level?"
