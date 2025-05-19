@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqkvcpjiwp2bi"]
+[gd_scene load_steps=5 format=3 uid="uid://cqkvcpjiwp2bi"]
 
 [ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://i3gjvseefs5r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://bav3x4lqudei4" path="res://scenes/confirmation_dialog.tscn" id="3_wu84c"]
 
 [node name="Control" type="Control"]
@@ -52,7 +53,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Reset"
 
-[node name="Settings" type="CheckButton" parent="CenterContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
 
@@ -78,10 +79,54 @@ layout_mode = 2
 anchors_preset = 0
 confirmation_text = "Do you want to exit game?"
 
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_bqqt6")
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Label" type="Label" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Choose language"
+
+[node name="LanguageSelect" type="OptionButton" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Polish"
+popup/item_1/id = 1
+
+[node name="Close" type="Button" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
-[connection signal="toggled" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_toggled"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Visit" to="." method="_on_link_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="confirm" from="ResetConfirmation" to="." method="_on_reset_confirmation_confirm"]
 [connection signal="confirm" from="ExitConfirmation" to="." method="_on_exit_confirmation_confirm"]
+[connection signal="item_selected" from="Settings/CenterContainer/PanelContainer/VBoxContainer/LanguageSelect" to="." method="_on_language_select_item_selected"]
+[connection signal="pressed" from="Settings/CenterContainer/PanelContainer/VBoxContainer/Close" to="." method="_on_close_pressed"]

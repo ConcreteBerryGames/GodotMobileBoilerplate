@@ -1,17 +1,10 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cbix2hp52wkme"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cbix2hp52wkme"]
 
-[ext_resource type="StyleBox" uid="uid://chwwr6lxh68sf" path="res://resources/themes/MenuButtonDisabled.tres" id="1_ndrj5"]
 [ext_resource type="StyleBox" uid="uid://ccxmhhp3aleg0" path="res://resources/themes/Label.tres" id="1_yyvv3"]
-[ext_resource type="StyleBox" uid="uid://cyk5iwmaijne5" path="res://resources/themes/MenuButtonActive.tres" id="2_0g31p"]
 [ext_resource type="StyleBox" uid="uid://bl4dnelg6ld0m" path="res://resources/themes/Panel.tres" id="2_ljm23"]
-[ext_resource type="StyleBox" uid="uid://bamkgggq4ariq" path="res://resources/themes/MenuButtonPressed.tres" id="3_vy1q4"]
 
 [resource]
 default_font_size = 32
-Button/styles/disabled = ExtResource("1_ndrj5")
-Button/styles/hover = ExtResource("2_0g31p")
-Button/styles/normal = ExtResource("2_0g31p")
-Button/styles/pressed = ExtResource("3_vy1q4")
 Label/colors/font_color = Color(0, 0.309804, 0.309804, 1)
 Label/font_sizes/font_size = 32
 Label/styles/normal = ExtResource("1_yyvv3")

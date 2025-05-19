@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c41eoeio42wgk"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c41eoeio42wgk"]
 
 [ext_resource type="StyleBox" uid="uid://cyk5iwmaijne5" path="res://resources/themes/MenuButtonActive.tres" id="1_4or45"]
 [ext_resource type="StyleBox" uid="uid://chwwr6lxh68sf" path="res://resources/themes/MenuButtonDisabled.tres" id="1_44jwx"]
 [ext_resource type="StyleBox" uid="uid://bamkgggq4ariq" path="res://resources/themes/MenuButtonPressed.tres" id="3_r0dwj"]
+[ext_resource type="StyleBox" uid="uid://bl4dnelg6ld0m" path="res://resources/themes/Panel.tres" id="4_r0dwj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0dwj"]
 
 [resource]
 default_font_size = 32
@@ -11,3 +14,7 @@ Button/styles/disabled = ExtResource("1_44jwx")
 Button/styles/hover = ExtResource("1_4or45")
 Button/styles/normal = ExtResource("1_4or45")
 Button/styles/pressed = ExtResource("3_r0dwj")
+PopupMenu/colors/font_color = Color(0, 0.501961, 0.501961, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0.309804, 0.309804, 1)
+PopupMenu/styles/hover = SubResource("StyleBoxEmpty_r0dwj")
+PopupMenu/styles/panel = ExtResource("4_r0dwj")

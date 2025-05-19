@@ -19,15 +19,6 @@ func _ready():
 	print(GameManager.current_level)
 	reset_button.disabled = GameManager.current_level == 1
 
-
-func _on_settings_toggled(toggled_on):
-	if toggled_on:
-		TranslationServer.set_locale("pl")
-	else:
-		TranslationServer.set_locale("en")
-		
-
-
 func _on_exit_confirmation_confirm():
 	GameManager.exitGame()
 
@@ -36,3 +27,18 @@ func _on_reset_confirmation_confirm():
 	GameManager.reset_progress()
 	reset_button.disabled = true
 	$ResetConfirmation.visible = false
+
+
+func _on_language_select_item_selected(index):
+	if index == 0:
+		TranslationServer.set_locale("en")
+	if index == 1:
+		TranslationServer.set_locale("pl")
+
+
+func _on_close_pressed():
+	$Settings.visible = false
+
+
+func _on_settings_pressed():
+	$Settings.visible = true
