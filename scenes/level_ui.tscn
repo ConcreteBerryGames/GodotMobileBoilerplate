@@ -31,7 +31,7 @@ theme_override_constants/margin_bottom = 24
 [node name="Back" type="Button" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
 theme = ExtResource("2_lodbe")
-text = "←go back"
+text = "back"
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -44,13 +44,12 @@ offset_bottom = -303.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
-text = "Click Godot icon 
-to go to next level"
+text = "level_txt"
 horizontal_alignment = 1
 
 [node name="LeavingLevelConfirmation" parent="CanvasLayer" instance=ExtResource("4_0tasm")]
 visible = false
-confirmation_text = "Are you sure You want to exit this level?"
+confirmation_text = "level_exit_confirmation"
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="confirm" from="CanvasLayer/LeavingLevelConfirmation" to="." method="_on_leaving_level_confirmation_confirm"]

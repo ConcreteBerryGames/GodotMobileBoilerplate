@@ -51,33 +51,32 @@ text = "play"
 [node name="Reset" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Reset"
+text = "reset"
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "settings"
 
 [node name="Visit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Visist page"
+text = "link"
 
 [node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Exit"
+text = "exit"
 
 [node name="ResetConfirmation" parent="." instance=ExtResource("3_wu84c")]
 visible = false
 layout_mode = 1
-confirmation_text = "Are you sure you want to 
-reset all your progress?"
+confirmation_text = "reset_confirmation"
 
 [node name="ExitConfirmation" parent="." instance=ExtResource("3_wu84c")]
 visible = false
 layout_mode = 2
 anchors_preset = 0
-confirmation_text = "Do you want to exit game?"
+confirmation_text = "exit_confirmation"
 
 [node name="Settings" type="Control" parent="."]
 visible = false
@@ -106,20 +105,20 @@ theme_override_constants/separation = 48
 
 [node name="Label" type="Label" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Choose language"
+text = "choose_language"
 
 [node name="LanguageSelect" type="OptionButton" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 selected = 0
 item_count = 2
-popup/item_0/text = "English"
+popup/item_0/text = "english"
 popup/item_0/id = 0
-popup/item_1/text = "Polish"
+popup/item_1/text = "polish"
 popup/item_1/id = 1
 
 [node name="Close" type="Button" parent="Settings/CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Close"
+text = "close"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]

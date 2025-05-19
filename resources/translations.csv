@@ -1,3 +1,20 @@
 key,en,pl
-title,My mobile game, Moja gra mobilna
-play, Play, Graj
+title,My mobile game,Moja gra mobilna
+play,Play,Graj
+reset,Reset,Zresetuj
+settings,Settings,Ustawienia
+link,Visit page,Moja strona
+exit,Exit,Wyjście
+english,English,Angielski
+polish,Polish,Polski
+choose_language,Choose language,Wybierz język
+confirm,Confirm,Tak
+cancel,Cancel,Zrezygnuj
+back, Back, Cofnij
+end, The End, Koniec gry
+main, Main menu, Menu główne
+close, Close, Zamknij
+reset_confirmation, "Are you sure you want to \n reset all your progress?","Czy jesteś pewien, że chcesz \n skasować postęp gry"?
+exit_confirmation, "Do you want to exit game?","Czy jesteś pewien, że chcesz \n wyjść z gry"?
+level_exit_confirmation, "Do you want to exit level?","Czy jesteś pewien, że chcesz \n opuścć poziom"?
+level_txt, "Click Godot icon \n to go to next level", "Kliknij ikonkę Godot \n żeby przejść na kolejny level"

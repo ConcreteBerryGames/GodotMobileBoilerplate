@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bav3x4lqudei4"]
+[gd_scene load_steps=4 format=3 uid="uid://bav3x4lqudei4"]
 
 [ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="1_dpd46"]
 [ext_resource type="Script" uid="uid://bdie1562n4r3h" path="res://scenes/confirmation_dialog.gd" id="2_es40j"]
+[ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="3_iwole"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -25,6 +26,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("3_iwole")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
 layout_mode = 2
@@ -33,7 +35,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Please confirm fdsd dfdssfd"
+text = "Default text"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
@@ -42,11 +44,11 @@ theme_override_constants/separation = 48
 
 [node name="Cancel" type="Button" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Cancel"
+text = "cancel"
 
 [node name="Confirm" type="Button" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Confirm"
+text = "confirm"
 
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
