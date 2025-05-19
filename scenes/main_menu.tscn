@@ -39,18 +39,22 @@ theme_override_constants/separation = 40
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
-text = "MY MOBILE GAME"
+text = "title"
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Play"
+text = "play"
 
 [node name="Reset" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Reset"
+
+[node name="Settings" type="CheckButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
 
 [node name="Visit" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -88,6 +92,7 @@ dialog_text = "Do you want to exit game?"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="toggled" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_toggled"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Visit" to="." method="_on_link_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="confirmed" from="ResetConfirmationDialog" to="." method="_on_reset_confirmation_dialog_confirmed"]

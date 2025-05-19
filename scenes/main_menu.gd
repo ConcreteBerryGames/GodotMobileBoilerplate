@@ -28,3 +28,11 @@ func _on_exit_confirmation_dialog_confirmed():
 func _ready():
 	print(GameManager.current_level)
 	reset_button.disabled = GameManager.current_level == 1
+
+
+func _on_settings_toggled(toggled_on):
+	if toggled_on:
+		TranslationServer.set_locale("pl")
+	else:
+		TranslationServer.set_locale("en")
+		
