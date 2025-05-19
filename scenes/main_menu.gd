@@ -10,21 +10,11 @@ func _on_link_pressed():
 
 
 func _on_reset_pressed():
-	$ResetConfirmationDialog.popup_centered()
-
-
-func _on_reset_confirmation_dialog_confirmed():
-	GameManager.reset_progress()
-	reset_button.disabled = true
-
+	$ResetConfirmation.visible = true
 
 func _on_exit_pressed():
-	$ExitConfirmationDialog.popup_centered() 
+	$ExitConfirmation.visible = true
 
-
-func _on_exit_confirmation_dialog_confirmed():
-	GameManager.exitGame()
-	
 func _ready():
 	print(GameManager.current_level)
 	reset_button.disabled = GameManager.current_level == 1
@@ -36,3 +26,13 @@ func _on_settings_toggled(toggled_on):
 	else:
 		TranslationServer.set_locale("en")
 		
+
+
+func _on_exit_confirmation_confirm():
+	GameManager.exitGame()
+
+
+func _on_reset_confirmation_confirm():
+	GameManager.reset_progress()
+	reset_button.disabled = true
+	$ResetConfirmation.visible = false

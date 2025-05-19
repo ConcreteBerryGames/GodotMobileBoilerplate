@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p6wndf4rf0o1" path="res://scenes/level_ui.gd" id="1_exbfu"]
 [ext_resource type="Theme" uid="uid://c6sfhmsmqm222" path="res://resources/themes/BackButton.tres" id="2_lodbe"]
-[ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="2_qvfhj"]
+[ext_resource type="PackedScene" uid="uid://bav3x4lqudei4" path="res://scenes/confirmation_dialog.tscn" id="4_0tasm"]
 
 [node name="LevelUI" type="Control"]
 layout_mode = 3
@@ -48,16 +48,9 @@ text = "Click Godot icon
 to go to next level"
 horizontal_alignment = 1
 
-[node name="LeavingLevelConfimation" type="ConfirmationDialog" parent="CanvasLayer"]
-transparent_bg = true
-title = ""
-size = Vector2i(686, 184)
-unresizable = true
-borderless = true
-transparent = true
-theme = ExtResource("2_qvfhj")
-ok_button_text = "Yes"
-dialog_text = "Are you sure You want to exit this level?"
+[node name="LeavingLevelConfirmation" parent="CanvasLayer" instance=ExtResource("4_0tasm")]
+visible = false
+confirmation_text = "Are you sure You want to exit this level?"
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="confirmed" from="CanvasLayer/LeavingLevelConfimation" to="." method="_on_leaving_level_confimation_confirmed"]
+[connection signal="confirm" from="CanvasLayer/LeavingLevelConfirmation" to="." method="_on_leaving_level_confirmation_confirm"]

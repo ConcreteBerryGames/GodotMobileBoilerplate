@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c41eoeio42wgk" path="res://resources/themes/Menu.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://i3gjvseefs5r" path="res://scenes/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Theme" uid="uid://cbix2hp52wkme" path="res://resources/themes/Dialog.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://bav3x4lqudei4" path="res://scenes/confirmation_dialog.tscn" id="3_wu84c"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -66,34 +66,22 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Exit"
 
-[node name="ResetConfirmationDialog" type="ConfirmationDialog" parent="."]
-transparent_bg = true
-size = Vector2i(465, 232)
-unresizable = true
-borderless = true
-transparent = true
-theme = ExtResource("3_bqqt6")
-ok_button_text = "Yes"
-dialog_text = "Are you sure you want to 
+[node name="ResetConfirmation" parent="." instance=ExtResource("3_wu84c")]
+visible = false
+layout_mode = 1
+confirmation_text = "Are you sure you want to 
 reset all your progress?"
 
-[node name="ExitConfirmationDialog" type="ConfirmationDialog" parent="."]
-transparent_bg = true
-title = ""
-position = Vector2i(0, 56)
-size = Vector2i(480, 184)
-unresizable = true
-borderless = true
-transparent = true
-content_scale_aspect = 1
-theme = ExtResource("3_bqqt6")
-ok_button_text = "Yes"
-dialog_text = "Do you want to exit game?"
+[node name="ExitConfirmation" parent="." instance=ExtResource("3_wu84c")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+confirmation_text = "Do you want to exit game?"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="toggled" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_toggled"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Visit" to="." method="_on_link_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="confirmed" from="ResetConfirmationDialog" to="." method="_on_reset_confirmation_dialog_confirmed"]
-[connection signal="confirmed" from="ExitConfirmationDialog" to="." method="_on_exit_confirmation_dialog_confirmed"]
+[connection signal="confirm" from="ResetConfirmation" to="." method="_on_reset_confirmation_confirm"]
+[connection signal="confirm" from="ExitConfirmation" to="." method="_on_exit_confirmation_confirm"]
